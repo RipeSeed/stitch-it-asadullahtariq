@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:practice/utils/MyRoutes.dart';
 import 'package:practice/widgets/HomeOption.dart';
 
 class Home extends StatefulWidget {
@@ -87,7 +88,9 @@ class _HomeState extends State<Home> {
               height: 64,
               child: ElevatedButton(
                 // ignore: avoid_print
-                onPressed: () => print("Hello world"),
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.OrderStart);
+                },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(
                     const RoundedRectangleBorder(
