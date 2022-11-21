@@ -24,14 +24,18 @@ class StitchingType extends StatelessWidget {
           toolbarHeight: 30,
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const OrderStatus(current: 1),
             const SizedBox(
               height: 20,
             ),
-            const Text(
-              "I want to stitch a...",
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
+            const Padding(
+              padding: EdgeInsets.only(left: 24),
+              child: Text(
+                "I want to stitch a...",
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+              ),
             ),
             const SizedBox(
               height: 29,
