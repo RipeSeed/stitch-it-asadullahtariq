@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
+      initialRoute: MyRoutes.OrderStart,
       routes: {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),

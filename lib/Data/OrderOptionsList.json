@@ -1,0 +1,16 @@
+{
+   "items": [{
+"id": "1",
+"name":"stitch for",
+"icons":"person"
+    },{
+"id": "2",
+"name":"Order","icon":"shopping_cart"
+    },{
+"id": "3",
+"name":"Payment","icon":"payment"
+    },{
+"id": "4",
+"name":"Delivery","icon":"local_shipping"
+    }]
+}
