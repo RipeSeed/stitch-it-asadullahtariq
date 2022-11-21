@@ -3,6 +3,7 @@ import 'package:practice/screens/Home.dart';
 import 'package:practice/screens/Login.dart';
 import 'package:practice/screens/OrderStart.dart';
 import 'package:practice/screens/Splash.dart';
+import 'package:practice/screens/StitchType.dart';
 import 'package:practice/utils/MyRoutes.dart';
 import 'package:flutter/services.dart';
 
@@ -26,12 +27,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      initialRoute: MyRoutes.OrderStart,
+      initialRoute: MyRoutes.StitchingType,
       routes: {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),
         MyRoutes.Splash: (context) => const Splash(),
         MyRoutes.OrderStart: (context) => const OrderStart(),
+        MyRoutes.StitchingType: (context) => const StitchingType()
       },
     );
   }
