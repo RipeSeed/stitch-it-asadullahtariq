@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:practice/Models/TailerModel.dart';
+import 'package:practice/widgets/TailerWidget.dart';
+
+import '../widgets/OrderSttaus.dart';
+
+class StitchingTailer extends StatelessWidget {
+  const StitchingTailer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final tailerRow = List.generate(
+      5,
+      ((index) => TailerModel(
+            price: 500,
+            rating: 4,
+            name: "Muhammad Azhar Hussain",
+            imagePath: "assets/images/TailerA.png",
+            days: 3,
+          )),
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[200],
+        elevation: 0,
+        toolbarHeight: 30,
+      ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        //crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const OrderStatus(current: 1),
+          const SizedBox(
+            height: 20,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 24),
+            child: Text(
+              "Choose tailor",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: tailerRow.length,
+              itemBuilder: (context, index) =>
+                  TailerWidgetRow(tailerModel: tailerRow[index]),
+            ),
+          ),
+          Expanded(
+            child: Container(),
+            flex: 5,
+          )
+        ],
+      ),
+    );
+  }
+}
