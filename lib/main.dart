@@ -4,6 +4,7 @@ import 'package:practice/screens/Login.dart';
 import 'package:practice/screens/OrderStart.dart';
 import 'package:practice/screens/Splash.dart';
 import 'package:practice/screens/StitchType.dart';
+import 'package:practice/screens/StitchingDuration.dart';
 import 'package:practice/screens/StitchingSize.dart';
 import 'package:practice/utils/MyRoutes.dart';
 import 'package:flutter/services.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      initialRoute: MyRoutes.StitchingSize,
+      initialRoute: MyRoutes.StitchingDuration,
       routes: {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.OrderStart: (context) => const OrderStart(),
         MyRoutes.StitchingType: (context) => const StitchingType(),
         MyRoutes.StitchingSize: (context) => const StitchingSize(),
+        MyRoutes.StitchingDuration: (context) => const StitchingDuration(),
       },
     );
   }
