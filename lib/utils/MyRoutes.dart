@@ -6,4 +6,5 @@ class MyRoutes {
   static String StitchingType = "/StitchingType";
   static String StitchingSize = "/StitchingSize";
   static String StitchingDuration = "/StitchingDuration";
+  static String StitchingPrice = "/StitchingPrice";
 }

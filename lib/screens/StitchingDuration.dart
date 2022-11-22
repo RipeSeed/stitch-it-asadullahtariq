@@ -19,7 +19,7 @@ class StitchingDuration extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          OrderStatus(current: 1),
+          const OrderStatus(current: 1),
           const SizedBox(
             height: 20,
           ),
