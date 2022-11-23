@@ -4,6 +4,7 @@ class TailerModel {
   final String imagePath;
   final int days;
   final int price;
+  final String address;
 
   TailerModel({
     required this.price,
@@ -11,5 +12,6 @@ class TailerModel {
     required this.name,
     required this.imagePath,
     required this.days,
+    required this.address,
   });
 }

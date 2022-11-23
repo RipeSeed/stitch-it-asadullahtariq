@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice/Models/TailerModel.dart';
 import 'package:practice/widgets/TailerWidget.dart';
+import 'package:practice/widgets/TailerWidgetColumn.dart';
 
 import '../widgets/OrderSttaus.dart';
 
@@ -16,11 +17,13 @@ class StitchingTailer extends StatelessWidget {
             rating: 4,
             name: "Muhammad Azhar Hussain",
             imagePath: "assets/images/TailerA.png",
+            address: "Lahore, Pakistan",
             days: 3,
           )),
     );
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
         elevation: 0,
@@ -51,8 +54,15 @@ class StitchingTailer extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Container(),
             flex: 5,
+            child: Container(
+              color: Colors.grey[300],
+              child: ListView.builder(
+                itemCount: tailerRow.length,
+                itemBuilder: (context, index) =>
+                    TailerWidgetColumn(tailerModel: tailerRow[index]),
+              ),
+            ),
           )
         ],
       ),
