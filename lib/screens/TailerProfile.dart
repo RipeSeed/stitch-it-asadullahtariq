@@ -2,13 +2,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:practice/utils/MyRoutes.dart';
+import 'package:practice/widgets/BottomSheet.dart';
 import 'package:practice/widgets/OrderButton.dart';
 import 'package:practice/widgets/TailerDetailWidget.dart';
 import 'package:practice/widgets/TitileAndValue.dart';
 
-class TailerProfile extends StatelessWidget {
+class TailerProfile extends StatefulWidget {
   const TailerProfile({super.key});
 
+  @override
+  State<TailerProfile> createState() => _TailerProfileState();
+}
+
+class _TailerProfileState extends State<TailerProfile> {
   @override
   Widget build(BuildContext context) {
     var price = 500;
@@ -121,9 +127,31 @@ class TailerProfile extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 40),
-            child: OrderButton(
-                route: MyRoutes.OrderStart, title: "Select this Tailor"),
-          )
+            child: Builder(builder: (context) {
+              return ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18)))),
+                onPressed: () => {
+                  showModalBottomSheet(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      context: context,
+                      builder: (context) => const BottomSheetWidget(),
+                      isScrollControlled: true)
+                },
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  height: 56,
+                  child: const Center(
+                    child: Text("Select this Tailor",
+                        style: TextStyle(color: Colors.white)),
+                  ),
+                ),
+              );
+            }),
+          ),
         ],
       ),
     );

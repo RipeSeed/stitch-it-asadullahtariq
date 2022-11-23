@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class OrderButton extends StatelessWidget {
-  final String route;
   final String title;
-  const OrderButton({super.key, required this.route, required this.title});
+  final Function onPressFunction;
+  const OrderButton(
+      {super.key,
+      required this.title,
+      required this.onPressFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +15,7 @@ class OrderButton extends StatelessWidget {
       height: 64,
       child: ElevatedButton(
         // ignore: avoid_print
-        onPressed: () {
-          Navigator.pushNamed(context, route);
-        },
+        onPressed: onPressFunction(),
         style: ButtonStyle(
           shape: MaterialStateProperty.all(
             const RoundedRectangleBorder(
