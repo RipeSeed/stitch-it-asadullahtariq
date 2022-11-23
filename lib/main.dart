@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:practice/screens/Home.dart';
 import 'package:practice/screens/Login.dart';
 import 'package:practice/screens/OrderStart.dart';
@@ -8,6 +9,7 @@ import 'package:practice/screens/StitchingDuration.dart';
 import 'package:practice/screens/StitchingPrice.dart';
 import 'package:practice/screens/StitchingSize.dart';
 import 'package:practice/screens/StitchingTailer.dart';
+import 'package:practice/screens/TailerProfile.dart';
 import 'package:practice/utils/MyRoutes.dart';
 import 'package:flutter/services.dart';
 
@@ -30,8 +32,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
+        fontFamily: GoogleFonts.cabin().fontFamily,
       ),
-      initialRoute: MyRoutes.StitchingTailer,
+      initialRoute: MyRoutes.TailerProfile,
       routes: {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),
@@ -42,6 +45,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.StitchingDuration: (context) => const StitchingDuration(),
         MyRoutes.StitchingPrice: (context) => const StitchingPrice(),
         MyRoutes.StitchingTailer: (context) => const StitchingTailer(),
+        MyRoutes.TailerProfile: (context) => const TailerProfile(),
       },
     );
   }
