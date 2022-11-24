@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:practice/widgets/OrderSttaus.dart';
 
 class StitchingPrice extends StatefulWidget {
-  const StitchingPrice({super.key});
+  final Function onPressedFunction;
+  const StitchingPrice({super.key, required this.onPressedFunction});
 
   @override
   State<StitchingPrice> createState() => _StitchingPriceState();
@@ -51,8 +51,20 @@ class _StitchingPriceState extends State<StitchingPrice> {
                 ],
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).size.height * 0.075, left: 25),
+            child: const Text("Press next to skip without selection."),
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => widget.onPressedFunction(),
+        child: const Icon(
+          Icons.arrow_forward,
+          color: Colors.white,
+        ),
       ),
     );
   }

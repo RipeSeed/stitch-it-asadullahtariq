@@ -55,7 +55,9 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
           StitchingDuration(
             onPressedFunction: nextPage,
           ),
-          const StitchingPrice(),
+          StitchingPrice(
+            onPressedFunction: nextPage,
+          ),
           const StitchingTailer()
         ],
       ),
