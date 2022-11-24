@@ -19,8 +19,11 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
   var num = 0;
 
   nextPage() {
-    controller.animateToPage(1,
-        duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+    setState(() {
+      num += 1;
+    });
+    controller.animateToPage(num,
+        duration: const Duration(microseconds: 500), curve: Curves.easeInOut);
   }
 
   @override
@@ -43,9 +46,15 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
           OrderStart(
             nextPage: nextPage,
           ),
-          const StitchingType(),
-          const StitchingSize(),
-          const StitchingDuration(),
+          StitchingType(
+            onPressedFunction: nextPage,
+          ),
+          StitchingSize(
+            onPressedFunction: nextPage,
+          ),
+          StitchingDuration(
+            onPressedFunction: nextPage,
+          ),
           const StitchingPrice(),
           const StitchingTailer()
         ],

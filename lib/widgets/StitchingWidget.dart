@@ -4,28 +4,48 @@ class StitchingWidget extends StatelessWidget {
   final String item;
   final int index;
   final int current;
+  final Function onPressedFunction;
   const StitchingWidget(
       {super.key,
       required this.item,
       required this.index,
-      required this.current});
+      required this.current,
+      required this.onPressedFunction});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(left: 24),
-      decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(24),
-            bottomLeft: Radius.circular(24),
+    return SizedBox(
+      height: 48,
+      child: Container(
+        margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.1),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        child: TextButton(
+          onPressed: () => onPressedFunction(),
+          style: ButtonStyle(
+              alignment: Alignment.centerLeft,
+              backgroundColor: MaterialStateProperty.all<Color>(index == current
+                  ? Colors.deepOrange[100]!
+                  : Colors.grey[50]!),
+              shape: MaterialStateProperty.all(
+                const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    bottomLeft: Radius.circular(24),
+                  ),
+                ),
+              )),
+          child: Padding(
+            padding: EdgeInsets.only(left: 27),
+            child: Text(
+              item,
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                color: current == index ? Colors.deepOrange[300] : Colors.black,
+              ),
+            ),
           ),
-          color: index == current ? Colors.deepOrange[100] : Colors.grey[50]),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 27, top: 15, bottom: 15),
-        child: Text(
-          item,
-          style: TextStyle(
-              color: current == index ? Colors.deepOrange[300] : Colors.black),
         ),
       ),
     );

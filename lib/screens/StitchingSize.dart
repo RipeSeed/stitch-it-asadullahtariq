@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:practice/widgets/StitchingWidget.dart';
 
-import '../widgets/OrderSttaus.dart';
-
 class StitchingSize extends StatelessWidget {
-  const StitchingSize({super.key});
+  final Function onPressedFunction;
+  const StitchingSize({super.key, required this.onPressedFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +39,12 @@ class StitchingSize extends StatelessWidget {
         ListView.builder(
           shrinkWrap: true,
           itemCount: data.length,
-          itemBuilder: (context, index) =>
-              StitchingWidget(item: data[index], index: index, current: 0),
+          itemBuilder: (context, index) => StitchingWidget(
+            item: data[index],
+            index: index,
+            current: 0,
+            onPressedFunction: onPressedFunction,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 51, bottom: 15),
@@ -50,8 +53,12 @@ class StitchingSize extends StatelessWidget {
             style: TextStyle(color: Colors.grey[500]),
           ),
         ),
-        const StitchingWidget(
-            item: "Pick reference dress from my address", index: 1, current: 0),
+        StitchingWidget(
+          item: "Pick reference dress from my address",
+          index: 1,
+          current: 0,
+          onPressedFunction: onPressedFunction,
+        ),
       ],
     ));
   }

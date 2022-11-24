@@ -16,7 +16,7 @@ class OrderStatus extends StatelessWidget {
     ];
 
     return Material(
-      color: Colors.white,
+      color: Colors.grey[50],
       child: Container(
         decoration: BoxDecoration(
           color: Colors.grey[200],

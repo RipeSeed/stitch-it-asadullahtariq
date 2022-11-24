@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:practice/widgets/DurationWidget.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
-import '../widgets/OrderSttaus.dart';
 
 class StitchingDuration extends StatelessWidget {
-  const StitchingDuration({super.key});
+  final Function onPressedFunction;
+  const StitchingDuration({super.key, required this.onPressedFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,11 @@ class StitchingDuration extends StatelessWidget {
                       .asMap()
                       .entries
                       .map((e) => DurationWidget(
-                          item: e.value, current: 3, index: e.key))
+                            item: e.value,
+                            current: 3,
+                            index: e.key,
+                            onPressedFunction: onPressedFunction,
+                          ))
                       .toList(),
                 ),
               ),

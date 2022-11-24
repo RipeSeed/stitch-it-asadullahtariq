@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:practice/widgets/StitchingWidget.dart';
 
-import '../widgets/OrderSttaus.dart';
-
 class StitchingType extends StatelessWidget {
-  const StitchingType({super.key});
+  final Function onPressedFunction;
+  const StitchingType({super.key, required this.onPressedFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +36,12 @@ class StitchingType extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             itemCount: data.length,
-            itemBuilder: (context, index) =>
-                StitchingWidget(item: data[index], index: index, current: 0),
+            itemBuilder: (context, index) => StitchingWidget(
+              item: data[index],
+              index: index,
+              current: 0,
+              onPressedFunction: onPressedFunction,
+            ),
           ),
         )
       ],
