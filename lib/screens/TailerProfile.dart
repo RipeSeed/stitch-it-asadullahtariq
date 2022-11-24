@@ -70,12 +70,12 @@ class _TailerProfileState extends State<TailerProfile> {
               Container(
                 decoration: BoxDecoration(
                   border: Border.symmetric(
-                    horizontal: BorderSide(color: Colors.grey[300]!, width: 2),
+                    horizontal: BorderSide(color: Colors.grey[300]!, width: 1),
                   ),
                 ),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -145,8 +145,13 @@ class _TailerProfileState extends State<TailerProfile> {
                   width: MediaQuery.of(context).size.width * 0.8,
                   height: 56,
                   child: const Center(
-                    child: Text("Select this Tailor",
-                        style: TextStyle(color: Colors.white)),
+                    child: Text(
+                      "Select this Tailor",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               );

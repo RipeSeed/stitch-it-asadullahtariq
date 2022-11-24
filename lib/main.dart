@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:practice/screens/Home.dart';
 import 'package:practice/screens/Login.dart';
+import 'package:practice/screens/OrderPage.dart';
 import 'package:practice/screens/OrderStart.dart';
 import 'package:practice/screens/Splash.dart';
 import 'package:practice/screens/StitchType.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
         fontFamily: GoogleFonts.cabin().fontFamily,
       ),
-      initialRoute: MyRoutes.TailerProfile,
+      initialRoute: MyRoutes.OrderPage,
       routes: {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),
@@ -46,7 +47,27 @@ class MyApp extends StatelessWidget {
         MyRoutes.StitchingPrice: (context) => const StitchingPrice(),
         MyRoutes.StitchingTailer: (context) => const StitchingTailer(),
         MyRoutes.TailerProfile: (context) => const TailerProfile(),
+        MyRoutes.OrderPage: (context) => const StitichingOrderPage()
       },
+      // onGenerateRoute: (settings) {
+      //   print(settings);
+      //   late Widget page;
+      //   if (settings.name == MyRoutes.Home) {
+      //     page = const Home();
+      //   } else if (settings.name == MyRoutes.Login) {
+      //     page = const Login();
+      //   }
+
+      //    else {
+      //     throw Exception('Unknown route: ${settings.name}');
+      //   }
+      //   return MaterialPageRoute<dynamic>(
+      //     builder: (context) {
+      //       return page;
+      //     },
+      //     settings: settings,
+      //   );
+      // },
     );
   }
 }

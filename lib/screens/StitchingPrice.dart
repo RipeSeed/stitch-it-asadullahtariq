@@ -13,15 +13,9 @@ class _StitchingPriceState extends State<StitchingPrice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey[200],
-        elevation: 0,
-        toolbarHeight: 30,
-      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const OrderStatus(current: 1),
           const SizedBox(
             height: 20,
           ),

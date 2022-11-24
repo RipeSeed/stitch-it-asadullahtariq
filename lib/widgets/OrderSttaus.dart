@@ -15,36 +15,34 @@ class OrderStatus extends StatelessWidget {
       {"id": "4", "name": "Delivery", "icon": 0xe15a}
     ];
 
-    return Column(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          height: 80,
-          child: Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ...(data)
-                      .asMap()
-                      .entries
-                      .map((item) => OrderStatusWidget(
-                          index: item.key,
-                          current: current,
-                          iconId: (item.value["icon"]! as int),
-                          statusName: item.value["name"].toString()))
-                      .toList()
-                ],
-              ) // all the children is making an error
-              ),
+    return Material(
+      color: Colors.white,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
         ),
-      ],
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ...(data)
+                  .asMap()
+                  .entries
+                  .map((item) => OrderStatusWidget(
+                      index: item.key,
+                      current: current,
+                      iconId: (item.value["icon"]! as int),
+                      statusName: item.value["name"].toString()))
+                  .toList()
+            ],
+          ),
+        ), // all the children is making an error
+      ),
     );
   }
 }

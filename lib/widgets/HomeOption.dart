@@ -47,9 +47,9 @@ class HomeOption extends StatelessWidget {
                 child: Text(
                   title,
                   style: const TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                  ),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      letterSpacing: 0.2),
                 ),
               ),
               Text(

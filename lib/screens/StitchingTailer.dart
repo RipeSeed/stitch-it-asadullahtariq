@@ -24,16 +24,10 @@ class StitchingTailer extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.grey[200],
-        elevation: 0,
-        toolbarHeight: 30,
-      ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
         //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const OrderStatus(current: 1),
           const SizedBox(
             height: 20,
           ),

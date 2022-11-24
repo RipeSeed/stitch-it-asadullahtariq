@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   HomeOption(
-                    title: "Waiting Orders",
+                    title: "Awaiting Orders.",
                     detail: "See orders which are not confirmed yet.",
                     colorName: (Colors.pink[200])!,
                     count: 3,
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                   shape: MaterialStateProperty.all(
                     const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
-                        Radius.circular(30),
+                        Radius.circular(24),
                       ),
                     ),
                   ),

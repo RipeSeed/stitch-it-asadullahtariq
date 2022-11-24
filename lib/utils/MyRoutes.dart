@@ -9,4 +9,5 @@ class MyRoutes {
   static String StitchingPrice = "/StitchingPrice";
   static String StitchingTailer = "/StitchingTailer";
   static String TailerProfile = "/TailerProfile";
+  static String OrderPage = "/OrderPage";
 }

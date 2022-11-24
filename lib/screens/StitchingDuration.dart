@@ -11,15 +11,9 @@ class StitchingDuration extends StatelessWidget {
   Widget build(BuildContext context) {
     var data = ["3 days", "5 days", "7 days", "10 days", "15 days"];
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey[200],
-        elevation: 0,
-        toolbarHeight: 30,
-      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const OrderStatus(current: 1),
           const SizedBox(
             height: 20,
           ),
