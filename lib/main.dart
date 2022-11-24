@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),
         MyRoutes.Splash: (context) => const Splash(),
-        MyRoutes.OrderStart: (context) => const OrderStart(),
         MyRoutes.StitchingType: (context) => const StitchingType(),
         MyRoutes.StitchingSize: (context) => const StitchingSize(),
         MyRoutes.StitchingDuration: (context) => const StitchingDuration(),

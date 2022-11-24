@@ -15,6 +15,14 @@ class StitichingOrderPage extends StatefulWidget {
 }
 
 class _StitichingOrderPageState extends State<StitichingOrderPage> {
+  var controller = PageController(initialPage: 0);
+  var num = 0;
+
+  nextPage() {
+    controller.animateToPage(1,
+        duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +36,20 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
               current: 0,
             )),
       ),
-      body: PageView(children: const [
-        OrderStart(),
-        StitchingType(),
-        StitchingSize(),
-        StitchingDuration(),
-        StitchingPrice(),
-        StitchingTailer()
-      ]),
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: controller,
+        children: [
+          OrderStart(
+            nextPage: nextPage,
+          ),
+          const StitchingType(),
+          const StitchingSize(),
+          const StitchingDuration(),
+          const StitchingPrice(),
+          const StitchingTailer()
+        ],
+      ),
     );
   }
 }

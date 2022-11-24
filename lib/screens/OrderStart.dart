@@ -1,11 +1,11 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:practice/widgets/GenderButton.dart';
-import 'package:practice/widgets/OrderSttaus.dart';
 
 // ignore: must_be_immutable
 class OrderStart extends StatelessWidget {
-  const OrderStart({super.key});
+  final Function nextPage;
+  const OrderStart({super.key, required this.nextPage});
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +33,13 @@ class OrderStart extends StatelessWidget {
                         path: "assets/images/Male.png",
                         backColor: Colors.deepOrange[100]!,
                         bordderColor: Colors.deepOrange[100]!,
+                        onPressedFunction: nextPage,
                       ),
                       GenderButton(
                         path: "assets/images/Female.png",
                         backColor: Colors.white,
                         bordderColor: Colors.grey[300]!,
+                        onPressedFunction: nextPage,
                       ),
                     ]),
               ),

@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
               child: ElevatedButton(
                 // ignore: avoid_print
                 onPressed: () {
-                  Navigator.pushNamed(context, MyRoutes.OrderStart);
+                  Navigator.pushNamed(context, MyRoutes.OrderPage);
                 },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(

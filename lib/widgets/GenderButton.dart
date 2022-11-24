@@ -4,11 +4,13 @@ class GenderButton extends StatelessWidget {
   final String path;
   final Color backColor;
   final Color bordderColor;
+  final Function onPressedFunction;
   const GenderButton(
       {super.key,
       required this.path,
       required this.backColor,
-      required this.bordderColor});
+      required this.bordderColor,
+      required this.onPressedFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class GenderButton extends StatelessWidget {
       height: 196,
       child: OutlinedButton(
           // ignore: avoid_print
-          onPressed: () => print("${path}is pressed"),
+          onPressed: () => onPressedFunction(),
           style: ButtonStyle(
               shape: MaterialStateProperty.all(
                 RoundedRectangleBorder(
