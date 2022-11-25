@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.Splash: (context) => const Splash(),
         MyRoutes.StitchingTailer: (context) => const StitchingTailer(),
         MyRoutes.TailerProfile: (context) => const TailerProfile(),
-        MyRoutes.OrderPage: (context) => const StitichingOrderPage()
+        MyRoutes.OrderPage: (context) => StitichingOrderPage()
       },
     );
   }
