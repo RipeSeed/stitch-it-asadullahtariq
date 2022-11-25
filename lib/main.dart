@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:practice/StitchingDetail/ViewModals/view_modal_stitching.dart';
 import 'package:practice/screens/Home.dart';
 import 'package:practice/screens/Login.dart';
 import 'package:practice/screens/OrderPage.dart';
-import 'package:practice/screens/OrderStart.dart';
 import 'package:practice/screens/Splash.dart';
-import 'package:practice/screens/StitchType.dart';
-import 'package:practice/screens/StitchingDuration.dart';
-import 'package:practice/screens/StitchingPrice.dart';
-import 'package:practice/screens/StitchingSize.dart';
 import 'package:practice/screens/StitchingTailer.dart';
 import 'package:practice/screens/TailerProfile.dart';
 import 'package:practice/utils/MyRoutes.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => StitchingModal(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
