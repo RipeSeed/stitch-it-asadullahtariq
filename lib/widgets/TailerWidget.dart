@@ -6,8 +6,9 @@ import '../utils/MyRoutes.dart';
 
 class TailerWidgetRow extends StatelessWidget {
   final TailerModel tailerModel;
+  final Function onConfirmPressed;
 
-  const TailerWidgetRow({super.key, required this.tailerModel});
+  const TailerWidgetRow({super.key, required this.tailerModel, required this.onConfirmPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class TailerWidgetRow extends StatelessWidget {
           onPressed: (() => Navigator.pushNamed(
                 context,
                 MyRoutes.TailerProfile,
-                arguments: TailerProfileArguments(tailerModel),
+                arguments: TailerProfileArguments(tailerModel,onConfirmPressed),
               )),
           style: ButtonStyle(
             shape: MaterialStateProperty.all(

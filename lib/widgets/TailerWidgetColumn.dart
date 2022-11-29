@@ -6,8 +6,10 @@ import 'package:practice/widgets/StarRating.dart';
 
 class TailerWidgetColumn extends StatelessWidget {
   final TailerModel tailerModel;
+  final Function onConfirmPressed;
 
-  const TailerWidgetColumn({super.key, required this.tailerModel});
+  const TailerWidgetColumn(
+      {super.key, required this.tailerModel, required this.onConfirmPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class TailerWidgetColumn extends StatelessWidget {
       onTap: () => Navigator.pushNamed(
         context,
         MyRoutes.TailerProfile,
-        arguments: TailerProfileArguments(tailerModel),
+        arguments: TailerProfileArguments(tailerModel, onConfirmPressed),
       ),
       child: Container(
         margin: const EdgeInsets.fromLTRB(1, 0, 1, 1.5),

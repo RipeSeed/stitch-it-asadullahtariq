@@ -6,6 +6,7 @@ import 'package:practice/screens/StitchingDuration.dart';
 import 'package:practice/screens/StitchingPrice.dart';
 import 'package:practice/screens/StitchingSize.dart';
 import 'package:practice/screens/StitchingTailer.dart';
+import 'package:practice/screens/StitchingorderConfirm.dart';
 import 'package:practice/widgets/OrderSttaus.dart';
 import 'package:provider/provider.dart';
 
@@ -19,8 +20,8 @@ class StitichingOrderPage extends StatefulWidget {
 }
 
 class _StitichingOrderPageState extends State<StitichingOrderPage> {
-  var controller = PageController(initialPage: 0);
-  var num = 0;
+  var controller = PageController(initialPage: 6);
+  var num = 3;
 
   nextPage() {
     //print(widget.stitchingModal.stitchingStatus);
@@ -65,7 +66,10 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
           StitchingPrice(
             onPressedFunction: nextPage,
           ),
-          const StitchingTailer()
+          StitchingTailer(
+            onPressedFunction: nextPage,
+          ),
+          const StitchingOrderConfirm(),
         ],
       ),
     );

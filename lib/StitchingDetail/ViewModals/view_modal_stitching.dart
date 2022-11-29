@@ -7,7 +7,7 @@ class StitchingModal extends ChangeNotifier {
   String _stitchingDuration = '';
   String _stitchingPrice = '';
   String _stitchingTailer = '';
-  int _stitchinStatus = 0;
+  int _stitchinStatus = 3;
 
   Map get stitchingDetail => {
         "stitichingFor": _stitchingFor,

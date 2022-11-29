@@ -6,6 +6,7 @@ import 'package:practice/screens/Login.dart';
 import 'package:practice/screens/OrderPage.dart';
 import 'package:practice/screens/Splash.dart';
 import 'package:practice/screens/StitchingTailer.dart';
+import 'package:practice/screens/StitchingorderConfirm.dart';
 import 'package:practice/screens/TailerProfile.dart';
 import 'package:practice/utils/MyRoutes.dart';
 import 'package:flutter/services.dart';
@@ -42,9 +43,10 @@ class MyApp extends StatelessWidget {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),
         MyRoutes.Splash: (context) => const Splash(),
-        MyRoutes.StitchingTailer: (context) => const StitchingTailer(),
         MyRoutes.TailerProfile: (context) => const TailerProfile(),
-        MyRoutes.OrderPage: (context) => StitichingOrderPage()
+        MyRoutes.OrderPage: (context) => StitichingOrderPage(),
+        MyRoutes.StitchingOrderConfirm: (context) =>
+            const StitchingOrderConfirm()
       },
     );
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BottomSheetWidget extends StatelessWidget {
-  const BottomSheetWidget({super.key});
+  final Function onConfirmPressed;
+  const BottomSheetWidget({super.key, required this.onConfirmPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,10 @@ class BottomSheetWidget extends StatelessWidget {
                     ),
                     TextButton(
                       // ignore: avoid_print
-                      onPressed: () => print("Confirm"),
+                      onPressed: () {
+                        onConfirmPressed();
+                        Navigator.pop(context);
+                      },
                       child: const Text(
                         "Confirm",
                         style: TextStyle(

@@ -140,7 +140,9 @@ class _TailerProfileState extends State<TailerProfile> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       context: context,
-                      builder: (context) => const BottomSheetWidget(),
+                      builder: (context) => BottomSheetWidget(
+                            onConfirmPressed: arg.onConfirmPressed,
+                          ),
                       isScrollControlled: true)
                 },
                 child: SizedBox(

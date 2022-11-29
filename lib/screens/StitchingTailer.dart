@@ -4,7 +4,9 @@ import 'package:practice/widgets/TailerWidget.dart';
 import 'package:practice/widgets/TailerWidgetColumn.dart';
 
 class StitchingTailer extends StatelessWidget {
-  const StitchingTailer({super.key});
+  final Function onPressedFunction;
+
+  const StitchingTailer({super.key, required this.onPressedFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +51,10 @@ class StitchingTailer extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: tailerRow.length,
-                itemBuilder: (context, index) =>
-                    TailerWidgetRow(tailerModel: tailerRow[index]),
+                itemBuilder: (context, index) => TailerWidgetRow(
+                  tailerModel: tailerRow[index],
+                  onConfirmPressed: onPressedFunction,
+                ),
               ),
             ),
           ),
@@ -60,8 +64,10 @@ class StitchingTailer extends StatelessWidget {
               color: Colors.grey[300],
               child: ListView.builder(
                 itemCount: tailerRow.length,
-                itemBuilder: (context, index) =>
-                    TailerWidgetColumn(tailerModel: tailerRow[index]),
+                itemBuilder: (context, index) => TailerWidgetColumn(
+                  tailerModel: tailerRow[index],
+                  onConfirmPressed: onPressedFunction,
+                ),
               ),
             ),
           )
