@@ -23,12 +23,15 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
   var num = 0;
 
   nextPage() {
-    Provider.of<StitchingModal>(context, listen: false)
-        .setStitchingStatus(num + 1);
     //print(widget.stitchingModal.stitchingStatus);
     setState(() {
       num += 1;
     });
+    if (num == 1) {
+      Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(1);
+    } else if (num == 5) {
+      Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(2);
+    }
     controller.animateToPage(num,
         duration: const Duration(microseconds: 500), curve: Curves.easeInOut);
   }
@@ -40,9 +43,8 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
         backgroundColor: Colors.grey[200],
         elevation: 0,
         toolbarHeight: 30,
-        bottom: PreferredSize(
-            preferredSize: const Size(double.infinity, 80),
-            child: OrderStatus()),
+        bottom: const PreferredSize(
+            preferredSize: Size(double.infinity, 80), child: OrderStatus()),
       ),
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),

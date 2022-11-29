@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:practice/Models/TailerModel.dart';
+import 'package:practice/Models/TailerProfileArguments.dart';
 import 'package:practice/widgets/StarRating.dart';
+import '../utils/MyRoutes.dart';
 
 class TailerWidgetRow extends StatelessWidget {
   final TailerModel tailerModel;
@@ -15,12 +17,16 @@ class TailerWidgetRow extends StatelessWidget {
         height: 171,
         width: 160,
         child: ElevatedButton(
-          onPressed: () => print("I pressed"),
+          onPressed: (() => Navigator.pushNamed(
+                context,
+                MyRoutes.TailerProfile,
+                arguments: TailerProfileArguments(tailerModel),
+              )),
           style: ButtonStyle(
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),
-                  side: BorderSide(color: Colors.grey[300]!, width: 2)),
+                  side: BorderSide(color: Colors.grey[300]!, width: 1)),
             ),
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),

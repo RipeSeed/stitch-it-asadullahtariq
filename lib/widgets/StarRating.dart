@@ -40,9 +40,6 @@ class StarRating extends StatelessWidget {
       );
     }
     return new InkResponse(
-      onTap:
-          // ignore: unnecessary_null_comparison
-          onRatingChanged == null ? null : () => onRatingChanged(index + 1.0),
       child: icon,
     );
   }

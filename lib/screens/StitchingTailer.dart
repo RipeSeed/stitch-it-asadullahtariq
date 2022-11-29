@@ -3,8 +3,6 @@ import 'package:practice/Models/TailerModel.dart';
 import 'package:practice/widgets/TailerWidget.dart';
 import 'package:practice/widgets/TailerWidgetColumn.dart';
 
-import '../widgets/OrderSttaus.dart';
-
 class StitchingTailer extends StatelessWidget {
   const StitchingTailer({super.key});
 
@@ -19,6 +17,12 @@ class StitchingTailer extends StatelessWidget {
             imagePath: "assets/images/TailerA.png",
             address: "Lahore, Pakistan",
             days: 3,
+            communication: 4.75,
+            delieveryTime: 4.35,
+            goodQuality: 4.8,
+            oders: 200,
+            responceTime: 4.3,
+            years: 1,
           )),
     );
 
@@ -26,7 +30,7 @@ class StitchingTailer extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         mainAxisSize: MainAxisSize.min,
-        //crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
             height: 20,
@@ -40,11 +44,14 @@ class StitchingTailer extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: tailerRow.length,
-              itemBuilder: (context, index) =>
-                  TailerWidgetRow(tailerModel: tailerRow[index]),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 18),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: tailerRow.length,
+                itemBuilder: (context, index) =>
+                    TailerWidgetRow(tailerModel: tailerRow[index]),
+              ),
             ),
           ),
           Expanded(

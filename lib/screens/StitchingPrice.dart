@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:practice/StitchingDetail/ViewModals/view_modal_stitching.dart';
+import 'package:provider/provider.dart';
 
 class StitchingPrice extends StatefulWidget {
   final Function onPressedFunction;
@@ -60,7 +62,11 @@ class _StitchingPriceState extends State<StitchingPrice> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => widget.onPressedFunction(),
+        onPressed: () {
+          Provider.of<StitchingModal>(context,listen: false)
+              .setStitichingPrice(rangeValue.toString());
+          widget.onPressedFunction();
+        },
         child: const Icon(
           Icons.arrow_forward,
           color: Colors.white,

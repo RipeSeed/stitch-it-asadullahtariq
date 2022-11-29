@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practice/StitchingDetail/ViewModals/view_modal_stitching.dart';
 import 'package:practice/widgets/StitchingWidget.dart';
+import 'package:provider/provider.dart';
 
 class StitchingSize extends StatelessWidget {
   final Function onPressedFunction;
@@ -43,7 +45,11 @@ class StitchingSize extends StatelessWidget {
             item: data[index],
             index: index,
             current: 0,
-            onPressedFunction: onPressedFunction,
+            onPressedFunction: () {
+              Provider.of<StitchingModal>(context, listen: false)
+                  .setStitchingSize(data[index]);
+              onPressedFunction();
+            },
           ),
         ),
         Padding(
@@ -57,7 +63,11 @@ class StitchingSize extends StatelessWidget {
           item: "Pick reference dress from my address",
           index: 1,
           current: 0,
-          onPressedFunction: onPressedFunction,
+          onPressedFunction: () {
+            Provider.of<StitchingModal>(context, listen: false)
+                .setStitchingSize("Pick reference dress from my address");
+            onPressedFunction();
+          },
         ),
       ],
     ));

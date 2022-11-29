@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practice/StitchingDetail/ViewModals/view_modal_stitching.dart';
 import 'package:practice/widgets/StitchingWidget.dart';
+import 'package:provider/provider.dart';
 
 class StitchingType extends StatelessWidget {
   final Function onPressedFunction;
@@ -40,7 +42,11 @@ class StitchingType extends StatelessWidget {
               item: data[index],
               index: index,
               current: 0,
-              onPressedFunction: onPressedFunction,
+              onPressedFunction: () {
+                Provider.of<StitchingModal>(context, listen: false)
+                    .setStitchingType(data[index]);
+                onPressedFunction();
+              },
             ),
           ),
         )

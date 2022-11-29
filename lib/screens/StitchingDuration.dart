@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practice/StitchingDetail/ViewModals/view_modal_stitching.dart';
 import 'package:practice/widgets/DurationWidget.dart';
+import 'package:provider/provider.dart';
 
 class StitchingDuration extends StatelessWidget {
   final Function onPressedFunction;
@@ -39,7 +41,12 @@ class StitchingDuration extends StatelessWidget {
                             item: e.value,
                             current: 3,
                             index: e.key,
-                            onPressedFunction: onPressedFunction,
+                            onPressedFunction: () {
+                              Provider.of<StitchingModal>(context,
+                                      listen: false)
+                                  .setStitchingDuration(e.value);
+                              onPressedFunction();
+                            },
                           ))
                       .toList(),
                 ),
