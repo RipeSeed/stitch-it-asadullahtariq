@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practice/utils/MyRoutes.dart';
 import 'package:practice/widgets/HomeOption.dart';
 
@@ -39,7 +40,7 @@ class _HomeState extends State<Home> {
                       )
                     ],
                   ),
-                  const Icon(Icons.person, size: 30)
+                  const FaIcon(FontAwesomeIcons.circleUser)
                 ],
               ),
             ),
@@ -102,9 +103,22 @@ class _HomeState extends State<Home> {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    Text("Create New Order"),
-                    Icon(Icons.arrow_forward)
+                    Text(
+                      "Create New Order",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      size: 28,
+                    )
                   ],
                 ),
               ),
@@ -114,10 +128,12 @@ class _HomeState extends State<Home> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.fire_truck), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "")
+          BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.house), label: ""),
+          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.magnifyingGlass), label: ""),
+          BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.truck), label: ""),
+          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.user), label: "")
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.deepOrange,

@@ -20,8 +20,8 @@ class StitichingOrderPage extends StatefulWidget {
 }
 
 class _StitichingOrderPageState extends State<StitichingOrderPage> {
-  var controller = PageController(initialPage: 6);
-  var num = 3;
+  var controller = PageController(initialPage: 0);
+  var num = 0;
 
   nextPage() {
     //print(widget.stitchingModal.stitchingStatus);
@@ -32,20 +32,61 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
       Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(1);
     } else if (num == 5) {
       Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(2);
+    } else if (num == 6) {
+      Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(3);
     }
     controller.animateToPage(num,
         duration: const Duration(microseconds: 500), curve: Curves.easeInOut);
   }
 
+  previousPage() {
+    num -= 1;
+    controller.animateToPage(num,
+        duration: const Duration(microseconds: 500), curve: Curves.easeInOut);
+    Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(2);
+  }
+
   @override
   Widget build(BuildContext context) {
+    final buttonstyle = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w700,
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
         elevation: 0,
         toolbarHeight: 30,
         bottom: const PreferredSize(
-            preferredSize: Size(double.infinity, 80), child: OrderStatus()),
+          preferredSize: Size(double.infinity, 80),
+          child: OrderStatus(),
+        ),
+        leading: GestureDetector(
+          onTap: () => showDialog(
+            context: context,
+            builder: ((context) => AlertDialog(
+                  title: const Text("Are you sure !"),
+                  content: const Text("you want to exit the order process"),
+                  actions: [
+                    TextButton(
+                      onPressed: (() => Navigator.pop(context)),
+                      child: Text("No", style: buttonstyle),
+                    ),
+                    TextButton(
+                      onPressed: (() {
+                        Provider.of<StitchingModal>(context, listen: false)
+                            .setStitchingStatus(0);
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                      }),
+                      child: Text("Yes", style: buttonstyle),
+                    )
+                  ],
+                )),
+          ),
+          child: const Icon(Icons.arrow_back_ios),
+        ),
       ),
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
@@ -69,7 +110,7 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
           StitchingTailer(
             onPressedFunction: nextPage,
           ),
-          const StitchingOrderConfirm(),
+          StitchingOrderConfirm(onPressedFunction: previousPage),
         ],
       ),
     );

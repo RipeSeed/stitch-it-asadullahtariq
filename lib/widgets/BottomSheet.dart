@@ -56,20 +56,24 @@ class BottomSheetWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    TextButton(
-                      // ignore: avoid_print
-                      onPressed: () {
-                        onConfirmPressed();
-                        Navigator.pop(context);
-                      },
-                      child: const Text(
-                        "Confirm",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
+                    Builder(builder: (context) {
+                      return TextButton(
+                        // ignore: avoid_print
+                        onPressed: () {
+                          onConfirmPressed();
+                          print("hello");
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                        },
+                        child: const Text(
+                          "Confirm",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                    )
+                      );
+                    })
                   ],
                 ),
               )

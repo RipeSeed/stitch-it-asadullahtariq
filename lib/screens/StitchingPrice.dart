@@ -34,9 +34,9 @@ class _StitchingPriceState extends State<StitchingPrice> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Center(
+                  Center(
                     child: Text(
-                      "PKR 5 - 22,000",
+                      "PKR ${rangeValue.start.toInt()} - ${rangeValue.end.toInt()}",
                       style:
                           TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
                     ),
@@ -63,8 +63,11 @@ class _StitchingPriceState extends State<StitchingPrice> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Provider.of<StitchingModal>(context,listen: false)
-              .setStitichingPrice(rangeValue.toString());
+          String price = rangeValue.start.toInt().toString();
+          price += "-";
+          price += rangeValue.end.toInt().toString();
+          Provider.of<StitchingModal>(context, listen: false)
+              .setStitichingPrice(price);
           widget.onPressedFunction();
         },
         child: const Icon(

@@ -38,16 +38,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
         fontFamily: GoogleFonts.cabin().fontFamily,
       ),
-      initialRoute: MyRoutes.OrderPage,
+      initialRoute: MyRoutes.Home,
       routes: {
         MyRoutes.Home: (context) => const Home(),
         MyRoutes.Login: (context) => const Login(),
         MyRoutes.Splash: (context) => const Splash(),
         MyRoutes.TailerProfile: (context) => const TailerProfile(),
         MyRoutes.OrderPage: (context) => StitichingOrderPage(),
-        MyRoutes.StitchingOrderConfirm: (context) =>
-            const StitchingOrderConfirm()
       },
+      
     );
   }
 }

@@ -25,7 +25,7 @@ class OrderStatusWidget extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: current == index ? Colors.deepOrange[400] : null,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(18),
               ),
               child: Icon(
                 IconData(
@@ -36,7 +36,7 @@ class OrderStatusWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Text(
