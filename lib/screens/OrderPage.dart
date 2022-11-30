@@ -40,15 +40,23 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
   }
 
   previousPage() {
-    num -= 1;
+    setState(() {
+      num -= 1;
+    });
+    if (num == 1) {
+      Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(1);
+    } else if (num == 5) {
+      Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(2);
+    } else if (num == 6) {
+      Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(3);
+    }
     controller.animateToPage(num,
         duration: const Duration(microseconds: 500), curve: Curves.easeInOut);
-    Provider.of<StitchingModal>(context, listen: false).setStitchingStatus(2);
   }
 
   @override
   Widget build(BuildContext context) {
-    final buttonstyle = TextStyle(
+    const buttonstyle = TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w700,
     );
@@ -71,7 +79,7 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
                   actions: [
                     TextButton(
                       onPressed: (() => Navigator.pop(context)),
-                      child: Text("No", style: buttonstyle),
+                      child: const Text("No", style: buttonstyle),
                     ),
                     TextButton(
                       onPressed: (() {
@@ -80,12 +88,15 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
                         Navigator.pop(context);
                         Navigator.pop(context);
                       }),
-                      child: Text("Yes", style: buttonstyle),
+                      child: const Text("Yes", style: buttonstyle),
                     )
                   ],
                 )),
           ),
-          child: const Icon(Icons.arrow_back_ios),
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
         ),
       ),
       body: PageView(
@@ -96,16 +107,20 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
             nextPage: nextPage,
           ),
           StitchingType(
-            onPressedFunction: nextPage,
+            backButtonFunction: previousPage,
+            nextButtonFunction: nextPage,
           ),
           StitchingSize(
-            onPressedFunction: nextPage,
+            backButtonFunction: previousPage,
+            nextButtonFunction: nextPage,
           ),
           StitchingDuration(
-            onPressedFunction: nextPage,
+            backButtonFunction: previousPage,
+            nextButtonFunction: nextPage,
           ),
           StitchingPrice(
-            onPressedFunction: nextPage,
+             backButtonFunction: previousPage,
+            nextButtonFunction: nextPage,
           ),
           StitchingTailer(
             onPressedFunction: nextPage,

@@ -170,7 +170,8 @@ class StitchingOrderConfirm extends StatelessWidget {
                 // ignore: avoid_print
                 onPressed: () => showDialog(
                     context: context,
-                    builder: ((context) => const OrderConfirmationAlertDialog())),
+                    builder: ((context) =>
+                        const OrderConfirmationAlertDialog())),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(
                     const RoundedRectangleBorder(

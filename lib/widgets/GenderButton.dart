@@ -4,17 +4,14 @@ import 'package:provider/provider.dart';
 
 class GenderButton extends StatelessWidget {
   final String path;
-  final Color backColor;
-  final Color bordderColor;
   final Function onPressedFunction;
   final String stitchingFor;
+  final bool flag;
   const GenderButton({
     super.key,
     required this.path,
-    required this.backColor,
-    required this.bordderColor,
     required this.onPressedFunction,
-    required this.stitchingFor,
+    required this.stitchingFor, required this.flag,
   });
 
   @override
@@ -35,9 +32,9 @@ class GenderButton extends StatelessWidget {
                     borderRadius: const BorderRadius.all(
                       Radius.circular(30),
                     ),
-                    side: BorderSide(width: 1, color: bordderColor)),
+                    side: BorderSide(width: 1, color: flag?Colors.deepOrange[100]!: Colors.grey[300]!)),
               ),
-              backgroundColor: MaterialStateProperty.all<Color>(backColor)),
+              backgroundColor: MaterialStateProperty.all<Color>(flag?Colors.deepOrange[100]!: Colors.white)),
           child: Image.asset(path)),
     );
   }

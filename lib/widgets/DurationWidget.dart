@@ -16,7 +16,7 @@ class DurationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: (() => onPressedFunction()),
+      onPressed: (() => onPressedFunction(index)),
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(

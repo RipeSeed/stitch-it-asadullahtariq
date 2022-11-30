@@ -16,13 +16,12 @@ class StitchingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
+      width: double.infinity,
       child: Container(
         margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.1),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(24),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
         child: TextButton(
-          onPressed: () => onPressedFunction(),
+          onPressed: () => onPressedFunction(index),
           style: ButtonStyle(
               alignment: Alignment.centerLeft,
               backgroundColor: MaterialStateProperty.all<Color>(index == current
@@ -37,7 +36,7 @@ class StitchingWidget extends StatelessWidget {
                 ),
               )),
           child: Padding(
-            padding: EdgeInsets.only(left: 27),
+            padding: const EdgeInsets.only(left: 27),
             child: Text(
               item,
               textAlign: TextAlign.start,

@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:practice/StitchingDetail/ViewModals/view_modal_stitching.dart';
+import 'package:practice/widgets/floating_action_button.dart';
 import 'package:provider/provider.dart';
 
 class StitchingPrice extends StatefulWidget {
-  final Function onPressedFunction;
-  const StitchingPrice({super.key, required this.onPressedFunction});
+  final Function nextButtonFunction;
+  final Function backButtonFunction;
+  const StitchingPrice({
+    super.key,
+    required this.nextButtonFunction,
+    required this.backButtonFunction,
+  });
 
   @override
   State<StitchingPrice> createState() => _StitchingPriceState();
 }
 
 class _StitchingPriceState extends State<StitchingPrice> {
-  var rangeValue = RangeValues(5, 22000);
+  var rangeValue = const RangeValues(5, 22000);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,26 +60,23 @@ class _StitchingPriceState extends State<StitchingPrice> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.075, left: 25),
-            child: const Text("Press next to skip without selection."),
-          ),
+          BackAndForthActionButton(
+              leftButton: true,
+              rightButton: true,
+              leftFunction: () {
+                Provider.of<StitchingModal>(context, listen: false)
+                    .setStitichingPrice("");
+                widget.backButtonFunction();
+              },
+              rightFunction: () {
+                String price = rangeValue.start.toInt().toString();
+                price += "-";
+                price += rangeValue.end.toInt().toString();
+                Provider.of<StitchingModal>(context, listen: false)
+                    .setStitichingPrice(price);
+                widget.nextButtonFunction();
+              })
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          String price = rangeValue.start.toInt().toString();
-          price += "-";
-          price += rangeValue.end.toInt().toString();
-          Provider.of<StitchingModal>(context, listen: false)
-              .setStitichingPrice(price);
-          widget.onPressedFunction();
-        },
-        child: const Icon(
-          Icons.arrow_forward,
-          color: Colors.white,
-        ),
       ),
     );
   }
