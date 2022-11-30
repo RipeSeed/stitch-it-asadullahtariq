@@ -1,16 +1,10 @@
-# practice
+# StitchIt
 
-A new Flutter project.
+StitchIt UI design build in Fluttr
 
-## Getting Started
+## Figma UI
 
-This project is a starting point for a Flutter application.
+Converted the following UI in mobile application for both android and iOS using the hybrid tool Flutter 
 
-A few resources to get you started if this is your first Flutter project:
+- [Figma UI of application](https://www.figma.com/file/u61znuEhXnG5CBL8U7ujVI/StitchIt---Practise?node-id=108%3A202&t=0F654lwJjTXcmBiU-0)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
