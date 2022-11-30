@@ -74,6 +74,9 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
           onTap: () => showDialog(
             context: context,
             builder: ((context) => AlertDialog(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
                   title: const Text("Are you sure !"),
                   content: const Text("you want to exit the order process"),
                   actions: [
@@ -119,7 +122,7 @@ class _StitichingOrderPageState extends State<StitichingOrderPage> {
             nextButtonFunction: nextPage,
           ),
           StitchingPrice(
-             backButtonFunction: previousPage,
+            backButtonFunction: previousPage,
             nextButtonFunction: nextPage,
           ),
           StitchingTailer(
