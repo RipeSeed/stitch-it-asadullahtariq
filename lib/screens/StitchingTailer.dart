@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:practice/Models/TailerModel.dart';
+import 'package:practice/StitchingDetail/ViewModals/view_modal_products.dart';
 import 'package:practice/widgets/TailerWidget.dart';
 import 'package:practice/widgets/TailerWidgetColumn.dart';
+import 'package:provider/provider.dart';
 
 class StitchingTailer extends StatelessWidget {
   final Function onPressedFunction;
@@ -66,10 +68,10 @@ class StitchingTailer extends StatelessWidget {
                 itemCount: tailerRow.length,
                 itemBuilder: (context, index) => TailerWidgetColumn(
                   tailerModel: tailerRow[index],
-                  onConfirmPressed: onPressedFunction,
+                    onConfirmPressed: onPressedFunction,
+                  ),
                 ),
               ),
-            ),
           )
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice/Models/TailerModel.dart';
 import 'package:practice/Models/TailerProfileArguments.dart';
+import 'package:practice/Models/product.dart';
 import 'package:practice/utils/MyRoutes.dart';
 import 'package:practice/widgets/StarRating.dart';
 

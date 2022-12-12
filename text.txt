@@ -1,0 +1,5 @@
+Consumer<StitchingModal>(
+    builder: (context, value, child) 
+            { ListView.builder(itemCount: value.selectedProduct.length,
+                itemBuilder: (context, index) => ProductWidget(productModal: value.selectedProduct[index],
+                  onConfirmPressed: onPressedFunction,),),),})
