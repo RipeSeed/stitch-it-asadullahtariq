@@ -32,7 +32,7 @@ class TailerWidgetRow extends StatelessWidget {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
+            padding: const EdgeInsets.fromLTRB(0, 15, 0, 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -43,7 +43,7 @@ class TailerWidgetRow extends StatelessWidget {
                   width: 48,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 4,
                 ),
                 Text(
                   tailerModel.name,
@@ -54,14 +54,14 @@ class TailerWidgetRow extends StatelessWidget {
                       letterSpacing: -0.2),
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 2,
                 ),
                 Text(
                   "PKR ${tailerModel.price}-Days ${tailerModel.days}",
                   style: const TextStyle(fontSize: 12, color: Colors.black),
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 2,
                 ),
                 StarRating(
                     rating: tailerModel.rating,

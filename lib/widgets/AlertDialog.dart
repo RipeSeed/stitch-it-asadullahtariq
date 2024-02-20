@@ -38,7 +38,7 @@ class OrderConfirmationAlertDialog extends StatelessWidget {
                         color: Colors.grey[400],
                         fontSize: 16,
                       ),
-                      'You order has been placed successfully. You will be notified when your tailor accepts the order. After that, you will need to pay in advance for further processing on your order. Please note that tailor can reject your order on his will and you will need to choose the tailor again.'),
+                      'You order has been placed successfully. You will be notified when your tailor accepts the order. After that, you will need to pay in advance for further processing on your order.Please note that tailor can reject your order on his will and you will need to choose the tailor again.'),
                 ],
               ),
             ),

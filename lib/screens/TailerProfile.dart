@@ -136,14 +136,15 @@ class _TailerProfileState extends State<TailerProfile> {
                         borderRadius: BorderRadius.circular(18)))),
                 onPressed: () => {
                   showModalBottomSheet(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      context: context,
-                      builder: (context) => BottomSheetWidget(
-                            onConfirmPressed: arg.onConfirmPressed,
-                          ),
-                      isScrollControlled: true)
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    context: context,
+                    builder: (context) => BottomSheetWidget(
+                      onConfirmPressed: arg.onConfirmPressed,
+                    ),
+                    isScrollControlled: true,
+                  )
                 },
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.8,
